@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SentiScope</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 16px;
+            width: 300px;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 14px;
+            padding: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .sub {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 14px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #1e293b;
+            color: #cbd5e1;
+            font-size: 12px;
+            margin-bottom: 16px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        .label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .toggle {
+            width: 52px;
+            height: 28px;
+            background: #334155;
+            border-radius: 999px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+            .toggle::after {
+                content: "";
+                position: absolute;
+                top: 3px;
+                left: 4px;
+                width: 22px;
+                height: 22px;
+                background: white;
+                border-radius: 50%;
+                transition: transform 0.2s ease;
+            }
+
+            .toggle.on {
+                background: #22c55e;
+            }
+
+                .toggle.on::after {
+                    transform: translateX(22px);
+                }
+
+        button {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        #rescanBtn {
+            background: #2563eb;
+            color: white;
+        }
+
+        #backendBtn {
+            background: #374151;
+            color: white;
+        }
+
+        .status {
+            margin-top: 12px;
+            min-height: 18px;
+            font-size: 12px;
+            color: #93c5fd;
+        }
+
+            .status.error {
+                color: #fca5a5;
+            }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="title">SentiScope</div>
+        <div class="sub">Emotion analysis for social platforms</div>
+
+        <div id="platformBadge" class="badge">🌐 General</div>
+
+        <div class="row">
+            <div class="label">Auto analysis</div>
+            <div id="autoToggle" class="toggle"></div>
+        </div>
+
+        <button id="rescanBtn">Re-scan current page</button>
+        <button id="backendBtn">Check backend</button>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

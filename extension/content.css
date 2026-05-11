@@ -1,0 +1,21 @@
+.sentiscope-badge {
+    font-family: -apple-system, sans-serif !important;
+    line-height: 1.4 !important;
+}
+
+#sentiscope-floating {
+    font-family: -apple-system, sans-serif !important;
+    animation: sentiscope-fadein 0.2s ease;
+}
+
+@keyframes sentiscope-fadein {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
